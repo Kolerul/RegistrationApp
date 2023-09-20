@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/Surname_edit_text"
+            android:hint="@string/surname"
+            android:inputType="textPersonName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/date_of_birth_edit_text"
+            android:hint="@string/date_of_birth"
+            android:layout_width="200dp"
+            android:inputType="date"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/password_edit_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+    <TextView
+        android:text="@string/repeat_the_password"
+        android:id="@+id/confirm_hint"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/confirm_password_edit_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/confirm"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/registration_button"
+            android:text="@string/registration"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+

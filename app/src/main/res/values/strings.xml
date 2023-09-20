@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RegistrationApp</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="password">Password</string>
+    <string name="confirm">Confirm</string>
+    <string name="registration">Registration</string>
+    <string name="repeat_the_password">Repeat the password you entered above</string>
+</resources>
