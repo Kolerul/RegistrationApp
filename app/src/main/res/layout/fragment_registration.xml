@@ -18,7 +18,7 @@
 
         <EditText
             android:layout_marginTop="20dp"
-            android:id="@+id/Surname_edit_text"
+            android:id="@+id/surname_edit_text"
             android:hint="@string/surname"
             android:inputType="textPersonName"
             android:layout_width="200dp"

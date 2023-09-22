@@ -5,23 +5,23 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
 
         <EditText
+            android:layout_marginTop="20dp"
             android:id="@+id/name_edit_text"
             android:hint="@string/name"
             android:inputType="textPersonName"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <EditText
             android:layout_marginTop="20dp"
-            android:id="@+id/Surname_edit_text"
+            android:id="@+id/surname_edit_text"
             android:hint="@string/surname"
             android:inputType="textPersonName"
             android:layout_width="200dp"
@@ -63,6 +63,7 @@
             android:id="@+id/registration_button"
             android:text="@string/registration"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

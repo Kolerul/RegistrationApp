@@ -65,4 +65,6 @@ dependencies {
     implementation("com.google.dagger:dagger:$daggerVersion")
     kapt("com.google.dagger:dagger-compiler:$daggerVersion")
     kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.7.0")
+
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 }
