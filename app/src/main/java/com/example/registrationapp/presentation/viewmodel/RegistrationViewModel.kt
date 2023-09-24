@@ -19,12 +19,30 @@ class RegistrationViewModel @Inject constructor(
         get() = _uiState
 
     fun registration(name: String, surname: String, birthDate: String, password: String) {
+        _uiState.value = RegistrationUIState.Loading
         viewModelScope.launch {
             try {
                 val user = User(name, surname, birthDate, password)
                 val result = repository.saveUserData(user)
                 if (result) _uiState.value = RegistrationUIState.Success
                 else _uiState.value = RegistrationUIState.Error("Error: Something gone wrong")
+            } catch (e: Exception) {
+                _uiState.value = RegistrationUIState.Error("Error: ${e.message.toString()}")
+            }
+        }
+    }
+
+    fun checkIsRegistered() {
+        _uiState.value = RegistrationUIState.Loading
+        viewModelScope.launch {
+            try {
+                val user = repository.getUserData()
+                if (user.name.isNotEmpty() &&
+                    user.surname.isNotEmpty() &&
+                    user.birthDate.isNotEmpty() &&
+                    user.password.isNotEmpty()
+                ) _uiState.value = RegistrationUIState.Success
+                else _uiState.value = RegistrationUIState.Usual
             } catch (e: Exception) {
                 _uiState.value = RegistrationUIState.Error("Error: ${e.message.toString()}")
             }

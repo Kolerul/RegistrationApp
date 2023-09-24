@@ -7,4 +7,9 @@
     <string name="confirm">Confirm</string>
     <string name="registration">Registration</string>
     <string name="repeat_the_password">Repeat the password you entered above</string>
+    <string name="invalid_name">Invalid name. The name must consist of at least 2 letters</string>
+    <string name="invalid_password">Invalid password. The password must contain at least one uppercase and lowercase letter, as well as a number. The minimum length is 5 characters</string>
+    <string name="invalid_surname">Invalid surname. The surname must consist of at least 2 letters</string>
+    <string name="invalid_confirm">Passwords don\'t match</string>
+    <string name="invalid_birth_date">There must be at least some date here</string>
 </resources>

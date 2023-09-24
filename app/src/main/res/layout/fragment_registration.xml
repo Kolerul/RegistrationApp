@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content_layout"
         android:layout_width="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            tools:text="Error"
+            android:textColor="@color/red"
+            android:layout_gravity="center"
+            android:id="@+id/name_validation_error_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
         <EditText
@@ -14,26 +36,59 @@
             android:hint="@string/name"
             android:inputType="textPersonName"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:layout_marginTop="20dp"
+            tools:text="Error"
+            android:textColor="@color/red"
+            android:layout_gravity="center"
+            android:id="@+id/surname_validation_error_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <EditText
-            android:layout_marginTop="20dp"
             android:id="@+id/surname_edit_text"
             android:hint="@string/surname"
             android:inputType="textPersonName"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:layout_marginTop="20dp"
+            tools:text="Error"
+            android:textColor="@color/red"
+            android:layout_gravity="center"
+            android:id="@+id/birth_date_validation_error_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <EditText
-            android:layout_marginTop="20dp"
             android:id="@+id/date_of_birth_edit_text"
             android:hint="@string/date_of_birth"
             android:layout_width="200dp"
             android:inputType="date"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:layout_marginTop="20dp"
+            tools:text="Error"
+            android:textColor="@color/red"
+            android:layout_gravity="center"
+            android:id="@+id/password_validation_error_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <EditText
-            android:layout_marginTop="20dp"
             android:id="@+id/password_edit_text"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -41,12 +96,14 @@
             android:ems="10"
             android:inputType="textPassword" />
 
-    <TextView
-        android:text="@string/repeat_the_password"
-        android:id="@+id/confirm_hint"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:text="@string/repeat_the_password"
+            android:id="@+id/confirm_hint"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/confirm_password_edit_text"
@@ -61,8 +118,13 @@
             android:text="@string/registration"
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
+
+
+</LinearLayout>
+
+
 
