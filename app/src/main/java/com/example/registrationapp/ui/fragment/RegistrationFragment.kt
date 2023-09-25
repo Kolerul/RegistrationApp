@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.registrationapp.R
 import com.example.registrationapp.RegistrationApp
 import com.example.registrationapp.databinding.FragmentRegistrationBinding
@@ -66,6 +67,7 @@ class RegistrationFragment :
                         contentLayout.visibility = View.VISIBLE
                         progressBar.visibility = View.GONE
                     }
+                    findNavController().navigate(R.id.action_registrationFragment_to_mainFragment)
                 }
 
                 is RegistrationUIState.Error -> {

@@ -9,7 +9,9 @@ import com.example.registrationapp.domain.repository.UserDataRepository
 import com.example.registrationapp.presentation.uistate.RegistrationUIState
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class RegistrationViewModel @Inject constructor(
     private val repository: UserDataRepository
 ) : ViewModel() {

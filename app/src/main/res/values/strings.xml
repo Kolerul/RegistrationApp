@@ -12,4 +12,6 @@
     <string name="invalid_surname">Invalid surname. The surname must consist of at least 2 letters</string>
     <string name="invalid_confirm">Passwords don\'t match</string>
     <string name="invalid_birth_date">There must be at least some date here</string>
+    <string name="greeting">Greeting</string>
+    <string name="greeting_message">Hello, dear %s! We are glad to welcome you to our universal application, which can do nothing but welcome. We hope that you will continue to use this wonderful application and wish you all the best!</string>
 </resources>
