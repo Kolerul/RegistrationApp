@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.registrationapp.R
 import com.example.registrationapp.RegistrationApp
 import com.example.registrationapp.databinding.FragmentRegistrationBinding
+import com.example.registrationapp.presentation.RegistrationTextWatcher
 import com.example.registrationapp.presentation.UserDataValidator
 import com.example.registrationapp.presentation.uistate.RegistrationUIState
 import com.example.registrationapp.presentation.viewmodel.RegistrationViewModel
@@ -33,8 +34,32 @@ class RegistrationFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setOnButtonClickListener()
+        setOnClickListeners()
         setUIStateObserver()
+        setDatePickerListener()
+        setTextWatcher()
+    }
+
+    private fun setTextWatcher() {
+        binding.apply {
+            val watcher = RegistrationTextWatcher(
+                listOf(
+                    nameEditText,
+                    surnameEditText,
+                    dateOfBirthEditText,
+                    passwordEditText,
+                    confirmPasswordEditText
+                ),
+                registrationButton
+            )
+
+            nameEditText.addTextChangedListener(watcher)
+            surnameEditText.addTextChangedListener(watcher)
+            dateOfBirthEditText.addTextChangedListener(watcher)
+            passwordEditText.addTextChangedListener(watcher)
+            confirmPasswordEditText.addTextChangedListener(watcher)
+        }
+
     }
 
     private fun setUIStateObserver() {
@@ -42,8 +67,8 @@ class RegistrationFragment :
             when (state) {
                 is RegistrationUIState.Initializing -> {
                     binding.apply {
-                        contentLayout.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
+                        contentLayout.visibility = View.GONE
+                        progressBar.visibility = View.VISIBLE
                     }
                     viewModel.checkIsRegistered()
                 }
@@ -63,11 +88,8 @@ class RegistrationFragment :
                 }
 
                 is RegistrationUIState.Success -> {
-                    binding.apply {
-                        contentLayout.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
-                    }
                     findNavController().navigate(R.id.action_registrationFragment_to_mainFragment)
+                    viewModel.setUsualUIState()
                 }
 
                 is RegistrationUIState.Error -> {
@@ -81,7 +103,7 @@ class RegistrationFragment :
         }
     }
 
-    private fun setOnButtonClickListener() {
+    private fun setOnClickListeners() {
         binding.apply {
             registrationButton.setOnClickListener {
                 if (checkFields()) {
@@ -93,8 +115,26 @@ class RegistrationFragment :
                     )
                 }
             }
+
+            dateOfBirthEditText.setOnClickListener {
+                val datePickerFragment = DatePickerFragment()
+                datePickerFragment.show(parentFragmentManager, DatePickerFragment.TAG)
+            }
         }
     }
+
+    private fun setDatePickerListener() {
+        parentFragmentManager.setFragmentResultListener(
+            DatePickerFragment.REQUEST_KEY,
+            viewLifecycleOwner
+        ) { _, result ->
+            val year = result.getInt(DatePickerFragment.YEAR_KEY)
+            val month = result.getInt(DatePickerFragment.MONTH_KEY)
+            val day = result.getInt(DatePickerFragment.DAY_KEY)
+            binding.dateOfBirthEditText.setText(getString(R.string.date, day, month, year))
+        }
+    }
+
 
     private fun showSnackBar(message: String) {
         Snackbar.make(binding.contentLayout, message, 3000).show()

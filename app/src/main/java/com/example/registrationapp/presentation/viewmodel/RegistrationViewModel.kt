@@ -50,4 +50,8 @@ class RegistrationViewModel @Inject constructor(
             }
         }
     }
+
+    fun setUsualUIState() {
+        _uiState.value = RegistrationUIState.Usual
+    }
 }

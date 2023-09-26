@@ -8,9 +8,8 @@ import com.example.registrationapp.domain.repository.UserDataRepository
 import com.example.registrationapp.presentation.uistate.MainUIState
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+
 class MainViewModel @Inject constructor(
     private val repository: UserDataRepository
 ): ViewModel() {
@@ -25,9 +24,13 @@ class MainViewModel @Inject constructor(
             try {
                 val user = repository.getUserData()
                 _uiState.value = MainUIState.Success(user)
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 _uiState.value = MainUIState.Error("Error: ${e.message}")
             }
         }
+    }
+
+    fun setInitializingState() {
+        _uiState.value = MainUIState.Initializing
     }
 }

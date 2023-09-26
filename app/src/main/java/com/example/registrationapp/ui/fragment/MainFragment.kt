@@ -45,6 +45,7 @@ class MainFragment: BaseFragment<FragmentMainBinding>(FragmentMainBinding::infla
                     }
                     val name = "${state.user.name} ${state.user.surname}"
                     showGreetingDialog(name)
+                    viewModel.setInitializingState()
                 }
                 is MainUIState.Error -> {
                     binding.apply {

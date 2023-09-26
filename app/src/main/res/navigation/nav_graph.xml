@@ -10,7 +10,8 @@
         android:label="RegistrationFragment" >
         <action
             android:id="@+id/action_registrationFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"

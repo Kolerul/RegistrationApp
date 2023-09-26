@@ -1,7 +1,9 @@
 package com.example.registrationapp.presentation
 
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class UserDataValidator @Inject constructor() {
 
     fun checkName(name: String): Boolean {

@@ -2,6 +2,7 @@ package com.example.registrationapp.ui.fragment
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import com.example.registrationapp.R
@@ -21,9 +22,13 @@ class UserGreetingDialogFragment: DialogFragment() {
 
         binding.userGreeting.text = getString(R.string.greeting_message, userName)
 
+        val listener = DialogInterface.OnClickListener { _, _ ->
+        }
+
         val dialog = AlertDialog.Builder(requireContext())
             .setTitle(getString(R.string.greeting))
             .setView(binding.root)
+            .setPositiveButton(getString(R.string.ok), listener)
 
         return dialog.create()
     }

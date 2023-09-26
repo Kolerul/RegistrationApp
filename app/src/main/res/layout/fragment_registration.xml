@@ -70,10 +70,10 @@
             android:layout_height="wrap_content" />
 
         <EditText
+            android:focusable="false"
             android:id="@+id/date_of_birth_edit_text"
             android:hint="@string/date_of_birth"
             android:layout_width="200dp"
-            android:inputType="date"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -114,6 +114,7 @@
             android:inputType="textPassword" />
 
         <Button
+            android:enabled="false"
             android:id="@+id/registration_button"
             android:text="@string/registration"
             android:layout_marginTop="20dp"
